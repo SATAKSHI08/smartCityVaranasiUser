@@ -1,0 +1,58 @@
+
+<div id="homeTop">
+    <h3 style="padding: 6px; margin: 0px; text-align: center; background-color: black; color: white; font-weight: bolder;">Varanasi Waste Management</h3> 
+    <img id="animateImg" style="width: 80%; margin-left: 10%; margin-top: 16%; height: auto;" src="/images/wastePoster.jpg" alt="Waste Tips">
+
+</div>
+
+<div id="homeBottom">
+    <hr>
+    <div style="text-align: center;"><a style="color: black; text-decoration: none" href="#">👇Recent Broadcasts👇</a></div>
+</div>
+
+<script>
+    
+
+    const homeBottom = document.getElementById('homeBottom');
+    const ul = document.createElement('ul');
+    fetch('/api/topBroadcasts').then(res => res.json()).then(data => {
+        a=data[0];
+        b=data[1];
+        c=data[2];
+        var li1 = document.createElement('li');
+        li1.innerHTML = c.title;
+        li1.addEventListener('click',()=>{
+            if(li1.innerHTML===c.title){
+                li1.innerHTML=`<i>`+c.title+`</i>`+`<br>`+c.description;
+            }
+            else{
+                li1.innerHTML=c.title;
+            }
+        })
+        var li2 = document.createElement('li');
+        li2.innerHTML = b.title;
+        li2.addEventListener('click',()=>{
+            if(li2.innerHTML===b.title){
+                li2.innerHTML=`<i>`+b.title+`</i>`+`<br>`+b.description;
+            }
+            else{
+                li2.innerHTML=b.title;
+            }
+        })
+        var li3 = document.createElement('li');
+        li3.innerHTML = a.title;
+        li3.addEventListener('click',()=>{
+            if(li3.innerHTML===a.title){
+                li3.innerHTML=`<i>`+a.title+`</i>`+`<br>`+a.description;
+            }
+            else{
+                li3.innerHTML=a.title;
+            }
+        })
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        homeBottom.appendChild(ul);
+    });
+</script>
+
