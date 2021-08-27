@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
 router.get('/logout', (req, res) => {
     console.log(req.cookies['session-token']);
     res.clearCookie('session-token');
-    res.send('successfol logout');
+    res.send('successful logout');
 })
 
 // getting the current user
