@@ -10,7 +10,7 @@
         <span style="margin: auto;">{{user.firstName}} | {{user.designation}}</span>
     </div>
     <div class="bottom-section">
-        <form action="/profile/api/{{user._id}}" method="POST">
+        <form action="/profile/api/" method="POST">
             <input type='hidden' name='_method' value='PUT'>
             <input type='text' name='firstName' value='{{user.firstName}}' placeholder="First Name">
             <input type='text' name='lastName' value='{{user.lastName}}' placeholder="Last Name">
@@ -30,16 +30,16 @@
     <div class="card">
         <div class="container1">
             <br>
-            <p>🔴 {{ this.report.description }} </p>
-            <p>✅ {{ this.response.description }} </p>
+            <p> <span style="color: white; background-color: black; padding: 3px;  font-size:0.9rem;">My Query :</span>  {{ this.report.description }} </p>
+            <p> <span style="color: white; background-color: black; padding: 3px; font-size:0.9rem;">Response :</span>  {{ this.response.description }} </p>
             <h6>
                 <span style="right: 0;"> {{formatDate this.createdAt 'MMMM Do YYYY, h:mm:ss a'}} </span>
             </h6>
         </div>
             
     </div>
-
     {{/each}}
+
 </div>
 
 

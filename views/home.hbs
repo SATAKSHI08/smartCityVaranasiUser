@@ -23,30 +23,39 @@
         li1.innerHTML = c.title;
         li1.addEventListener('click',()=>{
             if(li1.innerHTML===c.title){
-                li1.innerHTML=`<i>`+c.title+`</i>`+`<br>`+c.description;
+                li1.innerHTML=c.title+ `<br>`+c.description;
+                li1.style.border = "1px solid black";
+                li1.style.margin = "0px 5px 0px 0px";
             }
             else{
                 li1.innerHTML=c.title;
+                li1.style.border = "none";
             }
         })
         var li2 = document.createElement('li');
         li2.innerHTML = b.title;
         li2.addEventListener('click',()=>{
             if(li2.innerHTML===b.title){
-                li2.innerHTML=`<i>`+b.title+`</i>`+`<br>`+b.description;
+                li2.innerHTML=b.title+ `<br>`+b.description;
+                li2.style.border = "1px solid black";
+                li2.style.margin = "0px 5px 0px 0px";
             }
             else{
                 li2.innerHTML=b.title;
+                li2.style.border = "none";
             }
         })
         var li3 = document.createElement('li');
         li3.innerHTML = a.title;
         li3.addEventListener('click',()=>{
             if(li3.innerHTML===a.title){
-                li3.innerHTML=`<i>`+a.title+`</i>`+`<br>`+a.description;
+                li3.innerHTML=a.title+ `<br>`+a.description;
+                li3.style.border = "1px solid black";
+                li3.style.margin = "0px 5px 0px 0px";
             }
             else{
                 li3.innerHTML=a.title;
+                li3.style.border = "none";
             }
         })
         ul.appendChild(li1);

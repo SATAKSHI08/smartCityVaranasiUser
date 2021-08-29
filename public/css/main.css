@@ -251,6 +251,15 @@ form{
     text-align: center;
 }
 
+.card{
+    border: 1px solid black;
+    margin: 25px;
+    border-radius: 1px;
+    box-shadow: 0 0 8px 2px black;
+    text-align: left;
+    padding-left: 10px;
+}
+
 
 
 /* css for home */
