@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
                     displayName: payload['given_name'] + ' '+ payload['family_name'],
                     image: payload['picture'],
                     email: payload['email'],
-                    designation: "Employee"
+                    designation: "User"
                 });
                 await newUser.save();
             }

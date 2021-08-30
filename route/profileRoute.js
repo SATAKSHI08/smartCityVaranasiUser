@@ -9,7 +9,8 @@ profileRoute.get('/', async (req, res) => {
     try {
         const googleId = req.cookies['user-id'];
         const user = await User.findOne( { googleId: googleId } ).lean();
-        const data = await Query.find({}).where( {"report.user" : user['_id'] } ).lean();
+        const data = await Query.find({}).where( {"report.user" : googleId } ).lean();
+        console.log(data);
         
         res.render('profile', {
             user: user,
