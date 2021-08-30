@@ -9,7 +9,7 @@ async function getAllBins(url){
 //use the data to create markers on the map
 var data;
 if (localStorage.getItem('mapData') === null) {
-  data = getAllBins("https://waste-management-user-end.herokuapp.com/get/").then((allBins) => {
+  data = getAllBins(location.origin+"/get").then((allBins) => {
     localStorage.setItem('mapData', JSON.stringify(allBins));
     console.log('data addded to LS');
   })
@@ -61,12 +61,12 @@ function initMap(){
       }
       
       marker.addListener('click', ()=> {
-        location.href = `https://waste-management-user-end.herokuapp.com/waste/${features[i].id}`;
+        location.href = location.origin+`/waste/${features[i].id}`;
       });
     }
 
     setTimeout(()=> {
-      data = getAllBins("https://waste-management-user-end.herokuapp.com/get/").then((allBins) => {
+      data = getAllBins(location.origin+"/get/").then((allBins) => {
         localStorage.setItem('mapData', JSON.stringify(allBins));
         console.log('data updated to LS');
         // initMap();
