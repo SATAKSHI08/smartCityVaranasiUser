@@ -21,6 +21,16 @@ router.post('/login', (req, res) => {
         let userData =  await Users.findOne({googleId: userid});
         if (userData == null) {
             // create a new user
+            if (userData == null) {
+                let newUser = new Users({
+                    firstName: payload['given_name'],
+                    lastName: payload['family_name'],
+                    image: payload['picture'],
+                    email: payload['email'],
+                    designation: "Employee"
+                });
+                await newUser.save();
+            }
             
         }
         console.log(userData);
